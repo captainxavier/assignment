@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.PlaceholderFragment"
+    android:padding="10dp">
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/first_name"
+      android:hint="Full Names"
+      android:autofillHints=""
+      android:inputType="textPersonName" />
+
+    <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/last_name"
+      android:autofillHints=""
+        android:hint="Last Name"
+        android:layout_below="@+id/first_name"
+      android:inputType="textPersonName" />
+
+    <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/id_number"
+      android:autofillHints=""
+        android:hint="Id Number"
+        android:layout_below="@+id/last_name"
+      android:inputType="number" />
+
+    <RadioGroup
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/radioGroup"
+      android:autofillHints=""
+        android:layout_below="@+id/id_number"
+      android:inputType="number">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:id="@+id/male"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:id="@+id/female"/>
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/year_of_study"
+        android:layout_below="@id/radioGroup"
+        android:autofillHints=""
+        android:inputType="number"
+        android:hint="Year Number of Study"/>
+
+    <Button
+        android:id="@+id/getBtn"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Submit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@+id/year_of_study"
+        />
+
+
+
+
+</RelativeLayout>

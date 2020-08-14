@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ProjectApplication</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="java">Java</string>
+    <string name="python">Python</string>
+    <string name="android">Android</string>
+    <string name="angularjs">AngularJS</string>
+    <string name="react">React</string>
+    <string name="javascript">JavaScript</string>
+    <string name="c">C</string>
+    <string name="submit">Submit</string>
+</resources>
