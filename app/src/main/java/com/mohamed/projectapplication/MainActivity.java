@@ -17,19 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<User> users = new ArrayList<>();
-        users.add(new User("test","password"));
-        users.add(new User("test1","password1"));
-        users.add(new User("test2","password2"));
-        users.add(new User("test3","password3"));
-        users.add(new User("test4","password4"));
-
-        //user input
-        if (users.contains("test")){
-            User user = new User("test", "password");
-
-        }
-
         final ViewPager viewPager = findViewById(R.id.view_pager);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText(getString(R.string.tab_text_1)));

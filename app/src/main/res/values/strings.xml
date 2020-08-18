@@ -3,6 +3,7 @@
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="tab_text_3">Tab 3</string>
+    <string name="user">user</string>
     <string name="java">Java</string>
     <string name="python">Python</string>
     <string name="android">Android</string>
@@ -11,4 +12,6 @@
     <string name="javascript">JavaScript</string>
     <string name="c">C</string>
     <string name="submit">Submit</string>
+    <string name="exam">exam</string>
+    <string name="accounts">accounts</string>
 </resources>

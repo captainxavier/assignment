@@ -7,11 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +26,8 @@ public class FragmentTabTwo extends Fragment implements View.OnClickListener {
     private CheckBox android, java, python, angular, reactJs, c, js;
     private List<String> subjects = new ArrayList<>();
     private Button btnSubmit;
+    private ProgressBar mProgressBar;
+
 
     public FragmentTabTwo() {
     }
@@ -51,8 +57,7 @@ public class FragmentTabTwo extends Fragment implements View.OnClickListener {
         c.setOnClickListener(this);
         js = view.findViewById(R.id.chkJavaScript);
         js.setOnClickListener(this);
-
-
+        mProgressBar = view.findViewById(R.id.progressBar);
         return view;
     }
 
@@ -64,6 +69,7 @@ public class FragmentTabTwo extends Fragment implements View.OnClickListener {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mProgressBar.setVisibility(View.VISIBLE);
                 if (subjects.size() > 5){
                     Toast.makeText(
                             requireContext(),
@@ -79,6 +85,20 @@ public class FragmentTabTwo extends Fragment implements View.OnClickListener {
 
     private void proceedToSubmit() {
         Log.d(TAG, "proceedToSubmit: SUBJECTS: " + subjects);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference(getString(R.string.exam));
+        String uid = myRef.push().getKey();
+        myRef.child(uid).setValue(subjects);
+        mProgressBar.setVisibility(View.GONE);
+        //uncheck
+        android.setChecked(false);
+        java.setChecked(false);
+        python.setChecked(false);
+        angular.setChecked(false);
+        reactJs.setChecked(false);
+        c.setChecked(false);
+        js.setChecked(false);
+        Toast.makeText(getActivity(), "Posted", Toast.LENGTH_SHORT).show();
     }
 
     @Override
